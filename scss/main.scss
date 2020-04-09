@@ -1,0 +1,122 @@
+@import 'config';
+.card-info{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    &-title:first-of-type{
+        font-weight: 200;
+    }
+    &-title:nth-of-type(2){
+        font-weight:600;
+        margin-bottom: 10px;
+    }
+    &-desc{
+        width: 70%;
+        font-size: 1.1rem;
+    }
+}
+.card{
+    justify-content: center;
+    align-items: center;
+    width: 352px;
+    max-width: 100%;
+    background: #fff;
+    padding: 2rem;
+    margin: 16px;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    position: relative;
+    &:first-of-type,
+    &:nth-of-type(3){
+        transform: translateY(50%);
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        top:0;
+        left:0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    &:first-of-type::before{
+       background:$p-cyan;
+    }
+    &:nth-of-type(2)::before{
+       background: $p-red;
+    }
+    &:nth-of-type(3)::before{
+       background: $p-blue;
+    }
+    &:last-of-type::before{
+       background: $p-orange;
+    }
+    &-container{
+        flex-wrap: wrap;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;
+    }
+    &__title{
+        margin-bottom: 10px;
+    }
+    &__img{
+        margin-top: 32px;
+        float: right;
+    }
+}
+
+@media only screen and (max-width:1200px){
+   .card{
+        &:first-of-type,
+        &:nth-of-type(3){
+            transform: translateY(0%);
+        }
+   }
+}
+
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .container{
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .card-info{
+        margin-bottom: 4rem;
+        &-desc{
+            width:60%
+        }
+    }
+}
+
+@media only screen and (max-width:767px){
+    .container{
+        max-width: 375px;
+        height: 100%;
+    }
+    .card-info{
+        text-align: center;
+        &-desc{
+            font-size: .9rem;
+            width: 100%;
+        }
+    }
+    .card{
+        padding: 1.5rem;
+    }
+    .card:last-of-type{
+        margin-bottom: 4rem;
+    }
+    .l-heading{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:375px){
+    .container{
+        max-width: 300px;
+    }
+}
